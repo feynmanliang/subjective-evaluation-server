@@ -1,0 +1,11 @@
+{
+    "name": "testExperiment",
+    "original": [
+        { "name": "Beethoven", "url": "http://downloads2.makemusic.com/musicxml/BeetAnGeSample.mxl?_ga=1.73512464.349579945.1466131579" },
+        { "name": "Debussy", "url": "http://downloads2.makemusic.com/musicxml/DebuMandSample.mxl?_ga=1.73512464.349579945.1466131579" },
+    ],
+    "generated": [
+        { "name": "Mozart": "url": "http://downloads2.makemusic.com/musicxml/MozaVeilSample.mxl?_ga=1.111344390.349579945.1466131579" },
+        { "name": "Shubert": "url": "http://downloads2.makemusic.com/musicxml/Dichterliebe01.mxl?_ga=1.111344390.349579945.1466131579" },
+    ]
+}
