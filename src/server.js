@@ -1,10 +1,12 @@
 import express from 'express';
 
+
 export function startServer() {
+    const activeExperiment = require('../config/experiment.json');
     const app = express();
 
     app.get('/', (req, res) => {
-        res.send('Hello World!');
+        res.send(activeExperiment);
     });
 
     app.listen(3000, function() {
