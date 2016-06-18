@@ -3,10 +3,7 @@ import {Map,List,fromJS} from 'immutable';
 export const INITIAL_STATE = fromJS({
     questions: [],
     responses: [],
-    active: {
-        question: undefined,
-        response: undefined
-    }
+    active: undefined
 });
 
 export function setQuestions(state, questions) {
@@ -20,10 +17,11 @@ export function next(state) {
     const responses = state.get('responses');
 
     return state.merge({
-        active: {
-            question: questions.size > 0 ? questions.first() : undefined,
-            response: undefined
-        },
+        active: questions.size > 0 ?
+            {
+                question: questions.first(),
+            } :
+            undefined,
         questions: questions.rest(),
         responses: (activeResponse && activeQuestion) ?
             responses.push(activeQuestion.merge(activeResponse)) : responses,
