@@ -6,7 +6,7 @@ export function startServer() {
     const app = express();
 
     app.get('/', (req, res) => {
-        res.send(activeExperiment);
+        res.set('Access-Control-Allow-Origin', ['http://localhost:8080']).send(activeExperiment);
     });
 
     app.listen(3000, function() {
