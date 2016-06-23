@@ -3,21 +3,21 @@
     "original": [
         {
             "name": "Beethoven",
-            "url": "http://downloads2.makemusic.com/musicxml/BeetAnGeSample.mxl?_ga=1.73512464.349579945.1466131579"
+            "url": "http://www.midiworld.com/classic.htm/beethoven.htm"
         },
         {
-            "name": "Debussy",
-            "url": "http://downloads2.makemusic.com/musicxml/DebuMandSample.mxl?_ga=1.73512464.349579945.1466131579"
+            "name": "Bach",
+            "url": "http://www.midiworld.com/midis/other/c1/J_C_Bach_Ach_dass_ich_Wassers_gnug_hatte.mid"
         }
     ],
     "generated": [
         {
-            "name": "Mozart",
-            "url": "http://downloads2.makemusic.com/musicxml/MozaVeilSample.mxl?_ga=1.111344390.349579945.1466131579"
+            "name": "Hindemith",
+            "url": "http://www.midiworld.com/midis/other/c1/hindbsn1.mid"
         },
         {
-            "name": "Shubert",
-            "url": "http://downloads2.makemusic.com/musicxml/Dichterliebe01.mxl?_ga=1.111344390.349579945.1466131579"
+            "name": "Poulenc",
+            "url": "http://www.midiworld.com/midis/other/poulenc/poulcmo1.mid"
         }
     ]
 }
