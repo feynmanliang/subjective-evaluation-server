@@ -1,0 +1,23 @@
+{
+    "id": "testExperiment",
+    "original": [
+        {
+            "name": "Beethoven",
+            "url": "http://localhost:3000/beethoven.mp3"
+        },
+        {
+            "name": "Chopin",
+            "url": "http://localhost:3000/chopin.mp3"
+        }
+    ],
+    "generated": [
+        {
+            "name": "Joplin",
+            "url": "http://localhost:3000/joplin.mp3"
+        },
+        {
+            "name": "Largo",
+            "url": "http://localhost:3000/largo.mp3"
+        }
+    ]
+}
