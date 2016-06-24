@@ -1,6 +1,7 @@
 # For documentation see https://github.com/tjanczuk/iisnode/blob/master/src/samples/configuration/iisnode.yml
 
-# loggingEnabled: false
+loggingEnabled: true
+logDirectory: iisnode
 # debuggingEnabled: false
 # devErrorsEnabled: false
 # node_env: production
