@@ -3,21 +3,21 @@
     "original": [
         {
             "name": "Beethoven",
-            "url": "http://localhost:3000/beethoven.mp3"
+            "url": "http://bachbot-server.azurewebsites.net/beethoven.mp3"
         },
         {
             "name": "Chopin",
-            "url": "http://localhost:3000/chopin.mp3"
+            "url": "http://bachbot-server.azurewebsites.net/chopin.mp3"
         }
     ],
     "generated": [
         {
             "name": "Joplin",
-            "url": "http://localhost:3000/joplin.mp3"
+            "url": "http://bachbot-server.azurewebsites.net/joplin.mp3"
         },
         {
             "name": "Largo",
-            "url": "http://localhost:3000/largo.mp3"
+            "url": "http://bachbot-server.azurewebsites.net/largo.mp3"
         }
     ]
 }
