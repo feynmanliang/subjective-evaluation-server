@@ -13,7 +13,7 @@
     "test:watch": "npm run test -- --watch",
     "build": "npm run clean && npm run build-server",
     "build-server": "babel src -d dist",
-    "clean": "rm -rf dist && mkdir dist",
+    "clean": "rm -rf dist && mkdir dist"
   },
   "keywords": [],
   "author": "",
