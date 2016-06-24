@@ -2,14 +2,14 @@
   "name": "subjective-evaluation-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "babel": {
     "presets": [
       "es2015"
     ]
   },
   "scripts": {
-    "start": "babel-node index.js",
+    "start": "babel-node server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive",
     "test:watch": "npm run test -- --watch"
   },
@@ -30,6 +30,7 @@
     "express": "^4.14.0",
     "immutable": "^3.8.1",
     "isomorphic-fetch": "^2.2.1",
+    "morgan": "^1.7.0",
     "redux": "^3.5.2"
   }
 }
