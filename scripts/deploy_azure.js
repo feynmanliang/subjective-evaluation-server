@@ -57,7 +57,7 @@ glob(experimentDir + "/*.json", {}, function(err, files) {
         logger(files.map(function(f) {
             return {
                 path: f.path,
-                url: 'https://bachbot.azureedge.net/' + f.path
+                url: 'https://bachbot-experiments.azureedge.net/' + f.path
             };
         }));
     });
