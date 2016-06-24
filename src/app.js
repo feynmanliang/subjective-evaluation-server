@@ -1,4 +1,5 @@
 import azure from 'azure-storage';
+import cors from 'cors';
 import express from 'express';
 import logger from 'morgan'
 import uuid from 'node-uuid';
@@ -11,13 +12,24 @@ const env = process.env.NODE_ENV || 'development';
 app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
 
+
+const whitelist = ['http://localhost:8080'];
+const corsOptions = {
+  origin: (origin, callback) => {
+    const originIsWhitelisted = whitelist.indexOf(origin) !== -1;
+    callback(null, originIsWhitelisted);
+  }
+};
+app.use(cors(corsOptions))
+
 app.use((req, res, next) => {
     req.id = uuid.v4()
     next()
 })
 logger.token('id', req => req.id)
 app.use(logger(':id :method :url :response-time'));
-app.use(bodyParser.json())
+
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // static assets
 app.use(express.static(path.join(__dirname, '../public')));
@@ -28,7 +40,7 @@ app.post('/submitResponse', function (req, res) {
     if (!req.body)
         res.sendStatus(400)
 
-    const responses = req.body.computedStates[20].state.main.responses;
+    const responses = req.body;
     if (responses.length === 0)
         res.sendStatus(200);
 
