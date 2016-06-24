@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node dist/index.js",
-    "deploy-experiment": "node scripts/deploy_azure.js",
+    "deploy-experiment": "node scripts/deploy_experiment_azure.js",
     "watch": "nodemon src/index.js --exec babel-node",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive",
     "test:watch": "npm run test -- --watch",
@@ -20,6 +20,7 @@
   "author": "",
   "license": "Apache-2.0",
   "devDependencies": {
+    "azure-storage": "^1.0.1",
     "chai": "^3.5.0",
     "chai-immutable": "^1.6.0",
     "deploy-azure-cdn": "^1.1.0",
