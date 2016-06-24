@@ -17,7 +17,7 @@ glob(experimentDir + "/*", {}, function(err, files) {
         containerName: 'experiments',
         containerOptions: { publicAccessLevel: "blob" },
         folder: experimentName, // path within container
-        deleteExistingBlobs: true, // true means recursively deleting anything under folder
+        deleteExistingBlobs: false, // true means recursively deleting anything under folder
         concurrentUploadThreads: 4, // number of concurrent uploads, choose best for your network condition
         zip: true, // gzip files if they become smaller after zipping, content-encoding header will change if file is zipped
         metadata: { cacheControl: 'public, max-age=31556926' }, // metadata for each uploaded file
@@ -47,7 +47,7 @@ glob(experimentDir + "/*.json", {}, function(err, files) {
         containerName: 'experiments',
         containerOptions: { publicAccessLevel: "blob" },
         folder: '', // path within container
-        deleteExistingBlobs: true, // true means recursively deleting anything under folder
+        deleteExistingBlobs: false, // true means recursively deleting anything under folder
         concurrentUploadThreads: 4, // number of concurrent uploads, choose best for your network condition
         zip: true, // gzip files if they become smaller after zipping, content-encoding header will change if file is zipped
         metadata: { cacheControl: 'public, max-age=31556926' }, // metadata for each uploaded file
