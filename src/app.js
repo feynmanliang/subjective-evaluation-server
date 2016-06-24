@@ -7,7 +7,7 @@ import path from 'path';
 import bodyParser from 'body-parser';
 
 const app = express();
-const blobService = azure.createBlobService();
+const blobService = azure.createBlobService(process.env.CUSTOMCONNSTR_bachbotBlobstore);
 const env = process.env.NODE_ENV || 'development';
 app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
