@@ -1,0 +1,23 @@
+{
+    "id": "testExperiment",
+    "original": [
+        {
+            "name": "Beethoven",
+            "url": "https://bachbot.azureedge.net/testExperiment/beethoven.mp3"
+        },
+        {
+            "name": "Chopin",
+            "url": "https://bachbot.azureedge.net/testExperiment/chopin.mp3"
+        }
+    ],
+    "generated": [
+        {
+            "name": "Joplin",
+            "url": "https://bachbot.azureedge.net/testExperiment/joplin.mp3"
+        },
+        {
+            "name": "Largo",
+            "url": "https://bachbot.azureedge.net/testExperiment/largo.mp3"
+        }
+    ]
+}
