@@ -2,15 +2,18 @@
   "name": "subjective-evaluation-server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "src/server.js",
   "engines": {
     "node": "4.4.x"
   },
   "scripts": {
-    "start": "node node_modules/babel-cli/bin/babel-node.js server.js",
-    "watch": "nodemon server.js --exec babel-node",
+    "start": "node dist/index.js",
+    "watch": "nodemon src/index.js --exec babel-node",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "build": "npm run clean && npm run build-server",
+    "build-server": "babel src -d dist",
+    "clean": "rm -rf dist && mkdir dist",
   },
   "keywords": [],
   "author": "",
