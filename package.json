@@ -13,7 +13,7 @@
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive",
     "test:watch": "npm run test -- --watch",
     "build": "npm run clean && npm run build-server",
-    "build-server": "node node_modules/babel-cli/bin/babel.js src -d dist",
+    "build-server": "babel src -d dist",
     "clean": "rm -rf dist && mkdir dist"
   },
   "keywords": [],
