@@ -97,14 +97,17 @@ app.use(function (req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function (err, req, res, next) {
         console.log(err);
-        res.sendStatus(err.status || 500);
+        res.send(err);
+        //res.sendStatus(err.status || 500);
     });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function (err, req, res, next) {
-    res.sendStatus(err.status || 500);
+    //res.sendStatus(err.status || 500);
+    console.log(err);
+    res.send(err);
 });
 
 exports.default = app;
