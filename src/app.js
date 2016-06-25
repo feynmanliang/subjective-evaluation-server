@@ -13,7 +13,11 @@ app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
 
 
-const whitelist = ['http://localhost:8080'];
+const whitelist = [
+  'http://localhost:8080',
+  'http://bachbot.com',
+  'http://bachbot.azureedge.net',
+  'http://bachbot-server.azurewebsites.net'];
 const corsOptions = {
   origin: (origin, callback) => {
     const originIsWhitelisted = whitelist.indexOf(origin) !== -1;

@@ -40,7 +40,7 @@ var env = process.env.NODE_ENV || 'development';
 app.locals.ENV = env;
 app.locals.ENV_DEVELOPMENT = env == 'development';
 
-var whitelist = ['http://localhost:8080'];
+var whitelist = ['http://localhost:8080', 'http://bachbot.com', 'http://bachbot.azureedge.net', 'http://bachbot-server.azurewebsites.net'];
 var corsOptions = {
     origin: function origin(_origin, callback) {
         var originIsWhitelisted = whitelist.indexOf(_origin) !== -1;
