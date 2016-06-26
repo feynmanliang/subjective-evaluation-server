@@ -44,16 +44,21 @@ app.post('/submitResponse', function (req, res) {
     if (!req.body)
         res.sendStatus(400)
 
-    const responses = req.body.responses;
+    const { responses, userInfo } = req.body;
     if (responses.length === 0)
         res.sendStatus(200);
 
     const experimentId = responses[0].experimentId;
 
+    const responseBlob = {
+      responses,
+      userInfo
+    }
+
     blobService.createBlockBlobFromText(
         'responses', // the container
         experimentId + '/' + req.id + '-' + Date.now() + '.json', // the blob: {id}-{date}.json
-        JSON.stringify(responses),
+        JSON.stringify(responseBlob),
         function(error, result, response){
             if(error){
                 ("Error saving response JSON!");
@@ -76,7 +81,6 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     console.log(err);
-    //res.sendStatus(err.status || 500);
     res.send(err);
   });
 }
@@ -85,7 +89,6 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   console.log(err);
-  //res.sendStatus(err.status || 500);
   res.send(err);
 });
 
