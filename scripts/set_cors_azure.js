@@ -5,7 +5,7 @@ var serviceProperties = {
     CorsRule: [{
       AllowedOrigins: [
         'http://bachbot.com',
-        'http://bachbot.azureedge.net',
+        'http://www.bachbot.com',
         'http://bachbot-server.azurewebsites.net' ],
       AllowedMethods: ['GET'],
       AllowedHeaders: [],
