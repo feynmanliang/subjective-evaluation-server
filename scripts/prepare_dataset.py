@@ -1,27 +1,24 @@
 #!/usr/bin/env python
+"""
+Usage:
+    Copy this file into your experiment directory containing `questions.json`.
+    Run this file.
+    Upload the corresponding experiment.json and mp3s to Blob store.
+"""
 
 import json
 from glob import glob
 from os import path
 
-EXPERIMENTS_CONTAINER_URL = "https://bachbot.blob.core.windows.net/experiments"
+#EXPERIMENTS_CONTAINER_URL = "https://bachbot.blob.core.windows.net/experiments"
+EXPERIMENTS_CONTAINER_URL = "."
 
 experimentName = path.basename(path.dirname(path.abspath(__file__))) # current dir
 
-config = dict()
-config['id'] = experimentName
-config['original'] = list()
-config['generated'] = list()
+experiment = dict()
+experiment['id'] = experimentName
+experiment['questions'] = json.load(open('questions.json', 'r'))
 
-for fname in glob("*.mp3"):
-    sampleEntry = {
-            'name': path.splitext(fname)[0],
-            'url': EXPERIMENTS_CONTAINER_URL + '/' + experimentName + '/' + fname
-            }
-    sampleNum = int(fname[6:-4])
-    if sampleNum <= 50: # original
-        config['original'].append(sampleEntry)
-    else: # generated
-        config['generated'].append(sampleEntry)
+with open('experiment.json', 'w') as fd:
+    json.dump(experiment, fd)
 
-print(json.dumps(config))

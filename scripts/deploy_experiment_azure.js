@@ -23,7 +23,7 @@ glob(experimentDir + "/*", {}, function(err, files) {
         metadata: { cacheControl: 'public, max-age=31556926' }, // metadata for each uploaded file
         testRun: false // test run - means no blobs will be actually deleted or uploaded, see log messages for details
     };
-    deploy(opts, files, logger, function(err, res){
+    deploy(opts, files, logger, function(err, res) {
         if(err) {
             logger("Error deploying", err)
         }
@@ -32,7 +32,7 @@ glob(experimentDir + "/*", {}, function(err, files) {
             var fileName = path.basename(f.path);
             return {
                 path: f.path,
-                url: 'https://bachbot-experiments.azureedge.net/' + experimentName + '/' + fileName
+                url: 'https://bachbot.blob.core.windows.net/experiments/' + experimentName + '/' + fileName
             };
         }));
     });
@@ -62,7 +62,7 @@ glob(experimentDir + "/*.json", {}, function(err, files) {
             var fileName = path.basename(f.path);
             return {
                 path: f.path,
-                url: 'https://bachbot-experiments.azureedge.net/' + fileName
+                url: 'https://bachbot.blob.core.windows.net/experiments/' + fileName
             };
         }));
     });
