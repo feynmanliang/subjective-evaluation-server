@@ -76,15 +76,16 @@ app.post('/submitResponse', function (req, res) {
 
     var experimentId = responses[0].experimentId;
 
+    var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     var responseBlob = {
-        ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
+        ip: ip,
         datetime: Date.now(),
         responses: responses,
         userInfo: userInfo
     };
-
+    var blobName = req.id + '-' + Date.now() + '.json'; // {id}-{date}.json
     blobService.createBlockBlobFromText('responses', // the container
-    experimentId + '/' + req.id + '-' + Date.now() + '.json', // the blob: {id}-{date}.json
+    experimentId + '/' + blobName, // the blob
     JSON.stringify(responseBlob), function (error, result, response) {
         if (error) {
             "Error saving response JSON!";
@@ -95,6 +96,10 @@ app.post('/submitResponse', function (req, res) {
             console.log('Responses JSON uploaded successfully');
             res.sendStatus(200);
         }
+    });
+    res.send({
+        blobName: blobName,
+        ip: ip
     });
 });
 
