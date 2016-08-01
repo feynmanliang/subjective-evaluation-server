@@ -51,6 +51,8 @@ app.post('/submitResponse', function (req, res) {
     const experimentId = responses[0].experimentId;
 
     const responseBlob = {
+      ip: req.connection.remoteAddress,
+      datetime: Date.now(),
       responses,
       userInfo
     }
