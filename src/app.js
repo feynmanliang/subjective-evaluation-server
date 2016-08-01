@@ -51,7 +51,7 @@ app.post('/submitResponse', function (req, res) {
     const experimentId = responses[0].experimentId;
 
     const responseBlob = {
-      ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+      ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
       datetime: Date.now(),
       responses,
       userInfo

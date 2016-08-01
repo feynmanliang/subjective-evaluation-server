@@ -77,7 +77,7 @@ app.post('/submitResponse', function (req, res) {
     var experimentId = responses[0].experimentId;
 
     var responseBlob = {
-        ip: req.connection.remoteAddress,
+        ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
         datetime: Date.now(),
         responses: responses,
         userInfo: userInfo
