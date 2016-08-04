@@ -6,7 +6,11 @@ var serviceProperties = {
       AllowedOrigins: [
         'http://bachbot.com',
         'http://www.bachbot.com',
-        'http://bachbot-server.azurewebsites.net' ],
+        'http://bachbot-server.azurewebsites.net',
+        'https://bachbot.com',
+        'https://www.bachbot.com',
+        'https://bachbot-server.azurewebsites.net',
+      ],
       AllowedMethods: ['GET'],
       AllowedHeaders: [],
       ExposedHeaders: [],
