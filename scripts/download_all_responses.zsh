@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 
-lines=("${(@f)$(azure storage blob list responses \
+lines=("${(@f)$(az storage blob list responses \
   | grep 8-1-bachbot-questions)}");
 print $#lines
 for line in $lines; do
